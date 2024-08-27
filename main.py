@@ -16,7 +16,7 @@ app = Client(bot_name,
              bot_token=bot_token)
 
 @app.on_message(filters.command("start"))
-def start_msg(client,message):
+async def start_msg(client,message):
     print(message.text)
     await message.reply(f"Hello {message.from_user.first_name}!\n\n"
         "Welcome to **Card Flow** 🪪\n\n"
