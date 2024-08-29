@@ -1,10 +1,17 @@
-def generate_valid_cc(bin_number):
-    if bin_number == None:
+import random
+
+def generate_valid_cc(bin_number=None):
+    if bin_number is None:
         bin_number = 380000
-    generated_num = random.randint(1e9, (1e10)-1)
-    card_number = str(bin_number)+str(generated_num)
-    valid_card_number = is_valid_credit_card(int(card_number))
-    if valid_card_number == True:
+
+    # Generate a random 9-digit number
+    generated_num = random.randint(1_000_000_000, 9_999_999_999)
+    
+    # Concatenate BIN and generated number to form the card number
+    card_number = str(bin_number) + str(generated_num)
+    
+    # Ensure that the card number is a valid credit card number
+    if is_valid_credit_card(int(card_number)):
         return card_number
     else:
         return False
