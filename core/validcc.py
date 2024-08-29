@@ -1,4 +1,5 @@
 import random
+from isvalid import is_valid_credit_card
 
 def generate_valid_cc(bin_number=None):
     if bin_number is None:
