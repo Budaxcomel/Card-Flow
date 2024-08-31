@@ -1,4 +1,3 @@
-from isvalid import is_valid_credit_card
 import random
 
 def generate_valid_cc(bin_number=None):
